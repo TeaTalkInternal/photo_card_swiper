@@ -101,19 +101,22 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                     children: [
                       CardActionSpecifcOverlayWidget(
                         key: UniqueKey(),
-                        buttonIconColor: widget.leftButtonIconColor,
+                        buttonIconColor:
+                            widget.leftButtonIconColor ?? Colors.red[800],
                         buttonIcon: widget.leftButtonIcon ?? Icons.close,
                         isVisible: widget.isLeftOverlayShown,
                       ),
                       CardActionSpecifcOverlayWidget(
                         key: UniqueKey(),
-                        buttonIconColor: widget.centerButtonIconColor,
+                        buttonIconColor: widget.centerButtonIconColor ??
+                            Colors.lightBlue[600],
                         buttonIcon: widget.centerButtonIcon ?? Icons.favorite,
                         isVisible: widget.isCenterOverlayShown,
                       ),
                       CardActionSpecifcOverlayWidget(
                         key: UniqueKey(),
-                        buttonIconColor: widget.rightButtonIconColor,
+                        buttonIconColor: widget.rightButtonIconColor ??
+                            Colors.lightGreen[700],
                         buttonIcon: widget.rightButtonIcon ?? Icons.check,
                         isVisible: widget.isRightOverlayShown,
                       ),
@@ -138,6 +141,7 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                             widget.leftButtonBackgroundColor,
                         leftButtonIconColor: widget.leftButtonIconColor,
                         leftButtonAction: widget.leftButtonAction,
+                        leftButtonIcon: widget.leftButtonIcon,
                       ),
                       SizedBox(
                         width: 20.0,
@@ -150,6 +154,7 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                               centerButtonIconColor:
                                   widget.centerButtonIconColor,
                               centerButtonAction: widget.centerButtonAction,
+                              centerButtonIcon: widget.centerButtonIcon,
                             ),
                       SizedBox(
                         width: 20.0,
@@ -159,6 +164,7 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                             widget.rightButtonBackgroundColor,
                         rightButtonIconColor: widget.rightButtonIconColor,
                         rightButtonAction: widget.rightButtonAction,
+                        rightButtonIcon: widget.rightButtonIcon,
                       ),
                     ],
                   ),
@@ -219,7 +225,7 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
               child: Center(
                 child: Icon(
                   buttonIcon,
-                  color: buttonIconColor ?? Colors.red[800],
+                  color: buttonIconColor,
                   size: 55.0,
                 ),
               ),
@@ -237,11 +243,13 @@ class CenterButtonWidget extends StatelessWidget {
     required this.centerButtonBackgroundColor,
     required this.centerButtonIconColor,
     required this.centerButtonAction,
+    required this.centerButtonIcon,
   }) : super(key: key);
 
   final Color? centerButtonBackgroundColor;
   final Color? centerButtonIconColor;
   final Function? centerButtonAction;
+  final IconData? centerButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -261,7 +269,7 @@ class CenterButtonWidget extends StatelessWidget {
               width: 85,
               height: 85,
               child: Icon(
-                Icons.favorite,
+                centerButtonIcon ?? Icons.favorite,
                 color: centerButtonIconColor ?? Colors.lightBlue[600],
                 size: 50,
               )),
@@ -282,11 +290,13 @@ class RightButtonWidget extends StatelessWidget {
     required this.rightButtonBackgroundColor,
     required this.rightButtonIconColor,
     required this.rightButtonAction,
+    required this.rightButtonIcon,
   }) : super(key: key);
 
   final Color? rightButtonBackgroundColor;
   final Color? rightButtonIconColor;
   final Function? rightButtonAction;
+  final IconData? rightButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -306,7 +316,7 @@ class RightButtonWidget extends StatelessWidget {
               width: 65,
               height: 65,
               child: Icon(
-                Icons.check,
+                rightButtonIcon ?? Icons.check,
                 color: rightButtonIconColor ?? Colors.lightGreen[700],
                 size: 50,
               )),
@@ -327,11 +337,13 @@ class LeftButtonWidget extends StatelessWidget {
     required this.leftButtonBackgroundColor,
     required this.leftButtonIconColor,
     required this.leftButtonAction,
+    required this.leftButtonIcon,
   }) : super(key: key);
 
   final Color? leftButtonBackgroundColor;
   final Color? leftButtonIconColor;
   final Function? leftButtonAction;
+  final IconData? leftButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -351,7 +363,7 @@ class LeftButtonWidget extends StatelessWidget {
               width: 65,
               height: 65,
               child: Icon(
-                Icons.close,
+                leftButtonIcon ?? Icons.close,
                 color: leftButtonIconColor ?? Colors.red[800],
                 size: 50,
               )),

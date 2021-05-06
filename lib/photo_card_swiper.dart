@@ -22,6 +22,9 @@ class PhotoCardSwiper extends StatefulWidget {
   final Function? cardSwiped;
   final bool showLoading;
   final bool hideCenterButton;
+  final IconData? leftButtonIcon;
+  final IconData? centerButtonIcon;
+  final IconData? rightButtonIcon;
   final Color? leftButtonIconColor;
   final Color? leftButtonBackgroundColor;
   final Color? centerButtonIconColor;
@@ -33,21 +36,25 @@ class PhotoCardSwiper extends StatefulWidget {
   final Function? rightButtonAction;
   final Function? onCardTap;
 
-  PhotoCardSwiper(
-      {required this.photos,
-      this.cardSwiped,
-      this.showLoading = true,
-      this.hideCenterButton = false,
-      this.leftButtonIconColor,
-      this.leftButtonBackgroundColor,
-      this.centerButtonIconColor,
-      this.centerButtonBackgroundColor,
-      this.rightButtonIconColor,
-      this.rightButtonBackgroundColor,
-      this.leftButtonAction,
-      this.centerButtonAction,
-      this.rightButtonAction,
-      this.onCardTap});
+  PhotoCardSwiper({
+    required this.photos,
+    this.cardSwiped,
+    this.showLoading = true,
+    this.hideCenterButton = false,
+    this.leftButtonIcon,
+    this.centerButtonIcon,
+    this.rightButtonIcon,
+    this.leftButtonIconColor,
+    this.leftButtonBackgroundColor,
+    this.centerButtonIconColor,
+    this.centerButtonBackgroundColor,
+    this.rightButtonIconColor,
+    this.rightButtonBackgroundColor,
+    this.leftButtonAction,
+    this.centerButtonAction,
+    this.rightButtonAction,
+    this.onCardTap,
+  });
   @override
   _PhotoCardSwiperState createState() => _PhotoCardSwiperState();
 }
@@ -164,6 +171,9 @@ class _PhotoCardSwiperState extends State<PhotoCardSwiper> {
                             cardHeight: _updatedCardHeight,
                             cardWidth: _cardWidth,
                             photoCard: _updatedPhoto,
+                            leftButtonIcon: widget.leftButtonIcon,
+                            rightButtonIcon: widget.rightButtonIcon,
+                            centerButtonIcon: widget.centerButtonIcon,
                             hideCenterButton: widget.hideCenterButton,
                             feedbackPhotoCardValueNotifier:
                                 _feedbackPhotoCardValueNotifier,
@@ -182,6 +192,9 @@ class _PhotoCardSwiperState extends State<PhotoCardSwiper> {
                             cardWidth: _cardWidth,
                             hideCenterButton: widget.hideCenterButton,
                             photoCard: _updatedPhoto,
+                            leftButtonIcon: widget.leftButtonIcon,
+                            rightButtonIcon: widget.rightButtonIcon,
+                            centerButtonIcon: widget.centerButtonIcon,
                             isLeftOverlayShown: _isPhotoCardLeftOverlayShown,
                             isCenterOverlayShown:
                                 _isPhotoCardCenterOverlayShown,

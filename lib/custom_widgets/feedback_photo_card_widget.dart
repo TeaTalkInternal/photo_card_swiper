@@ -84,21 +84,24 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                         case CardActionDirection.cardLeftAction:
                           return CardActionSpecifcOverlayWidget(
                             key: UniqueKey(),
-                            buttonIconColor: leftButtonIconColor,
+                            buttonIconColor:
+                                leftButtonIconColor ?? Colors.red[800],
                             buttonIcon: leftButtonIcon ?? Icons.close,
                             isVisible: true,
                           );
                         case CardActionDirection.cardCenterAction:
                           return CardActionSpecifcOverlayWidget(
                             key: UniqueKey(),
-                            buttonIconColor: centerButtonIconColor,
+                            buttonIconColor:
+                                centerButtonIconColor ?? Colors.lightBlue[600],
                             buttonIcon: centerButtonIcon ?? Icons.favorite,
                             isVisible: true,
                           );
                         case CardActionDirection.cardRightAction:
                           return CardActionSpecifcOverlayWidget(
                             key: UniqueKey(),
-                            buttonIconColor: rightButtonIconColor,
+                            buttonIconColor:
+                                rightButtonIconColor ?? Colors.lightGreen[700],
                             buttonIcon: rightButtonIcon ?? Icons.check,
                             isVisible: true,
                           );
@@ -124,6 +127,7 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                       LeftButtonWidget(
                         leftButtonBackgroundColor: leftButtonBackgroundColor,
                         leftButtonIconColor: leftButtonIconColor,
+                        leftButtonIcon: leftButtonIcon,
                       ),
                       SizedBox(
                         width: 20.0,
@@ -134,6 +138,7 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                               centerButtonBackgroundColor:
                                   centerButtonBackgroundColor,
                               centerButtonIconColor: centerButtonIconColor,
+                              centerButtonIcon: centerButtonIcon,
                             ),
                       SizedBox(
                         width: 20.0,
@@ -141,6 +146,7 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                       RightButtonWidget(
                         rightButtonBackgroundColor: rightButtonBackgroundColor,
                         rightButtonIconColor: rightButtonIconColor,
+                        rightButtonIcon: rightButtonIcon,
                       ),
                     ],
                   ),
@@ -218,10 +224,12 @@ class CenterButtonWidget extends StatelessWidget {
     Key? key,
     required this.centerButtonBackgroundColor,
     required this.centerButtonIconColor,
+    required this.centerButtonIcon,
   }) : super(key: key);
 
   final Color? centerButtonBackgroundColor;
   final Color? centerButtonIconColor;
+  final IconData? centerButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -241,7 +249,7 @@ class CenterButtonWidget extends StatelessWidget {
               width: 85,
               height: 85,
               child: Icon(
-                Icons.favorite,
+                centerButtonIcon ?? Icons.favorite,
                 color: centerButtonIconColor ?? Colors.lightBlue[600],
                 size: 50,
               )),
@@ -257,10 +265,12 @@ class RightButtonWidget extends StatelessWidget {
     Key? key,
     required this.rightButtonBackgroundColor,
     required this.rightButtonIconColor,
+    required this.rightButtonIcon,
   }) : super(key: key);
 
   final Color? rightButtonBackgroundColor;
   final Color? rightButtonIconColor;
+  final IconData? rightButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -280,7 +290,7 @@ class RightButtonWidget extends StatelessWidget {
               width: 65,
               height: 65,
               child: Icon(
-                Icons.check,
+                rightButtonIcon ?? Icons.check,
                 color: rightButtonIconColor ?? Colors.lightGreen[700],
                 size: 50,
               )),
@@ -296,10 +306,12 @@ class LeftButtonWidget extends StatelessWidget {
     Key? key,
     required this.leftButtonBackgroundColor,
     required this.leftButtonIconColor,
+    required this.leftButtonIcon,
   }) : super(key: key);
 
   final Color? leftButtonBackgroundColor;
   final Color? leftButtonIconColor;
+  final IconData? leftButtonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -319,7 +331,7 @@ class LeftButtonWidget extends StatelessWidget {
               width: 65,
               height: 65,
               child: Icon(
-                Icons.close,
+                leftButtonIcon ?? Icons.close,
                 color: leftButtonIconColor ?? Colors.red[800],
                 size: 50,
               )),
