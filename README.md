@@ -7,7 +7,7 @@ A simple flutter package for creating a swiping card layout for list of photos.
 photo_card_swiper is a photo slider resembling card stack. Card comprises options to reflect like, dislike and favorite feature. The card elements are highly customisable. This layout is quite common in social media apps like Instagram, tinder etc.
 
 
-### Technical Notes:
+## Technical Notes:
 The layout for pages is built using stack of draggable widgets using LayoutBuilder.  This package supports cards to be tapped too.
 Dev have options show 2 or 3 buttons, change the color, icon name and icon color of those buttons too.
 
@@ -17,7 +17,7 @@ Dev have options show 2 or 3 buttons, change the color, icon name and icon color
 - [How to use it.](#how-to-use-it)
 - [parameters](#parameters)
 
-###  How to use it.
+##  How to use it.
 
 the usage is very simple, just use the following code for default rendering of photos. Default values for Icons and Colors are taken care for easy usage.
 
