@@ -7,17 +7,17 @@ class ExamplePageWidget extends StatefulWidget {
     PhotoCard(
       title: 'Sonu Sood',
       description: 'A man with million hearts.',
-      imageName: 'pic_0',
+      imageName: 'pic_0.jpg',
     ),
     PhotoCard(
       title: 'Dr APJ Abdul Kalam',
       description: 'An inspiration to many.',
-      imageName: 'pic_2',
+      imageName: 'pic_2.jpg',
     ),
     PhotoCard(
       title: 'Anand Kumar',
       description: 'An mathematics pioneer.',
-      imageName: 'pic_4',
+      imageName: 'pic_4.jpg',
     ),
   ];
 
@@ -77,6 +77,7 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
   }
 
 //Example method to load more photos asynchronously
+
   void _loadMorePhotos() {
     Future.delayed(Duration(seconds: 1), () {
       setState(() {
@@ -84,12 +85,12 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
           PhotoCard(
             title: 'Salumarada Thimmakka',
             description: 'A inspiring  environmentalist.',
-            imageName: 'pic_1',
+            imageName: 'pic_1.jpg',
           ),
           PhotoCard(
             title: 'Kareem Bhai',
             description: 'An Unsung hero.',
-            imageName: 'pic_3',
+            imageName: 'pic_3.jpg',
           ),
         ];
       });

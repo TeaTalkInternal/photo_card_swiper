@@ -12,5 +12,5 @@ class PhotoCard {
     this.imageName = "",
   });
 
-  String get imagePath => 'images/$imageName.jpg';
+  String get imagePath => 'images/$imageName';
 }
