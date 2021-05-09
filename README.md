@@ -1,5 +1,9 @@
 # photo_card_swiper
 
+- [photo_card_swiper](#photo_card_swiper)
+- [How to use it.](#how-to-use-it)
+- [parameters](#parameters)
+
 Language: [English](README.md)
 
 A simple flutter package for creating a swiping card layout for list of photos.
@@ -7,17 +11,13 @@ A simple flutter package for creating a swiping card layout for list of photos.
 photo_card_swiper is a photo slider resembling card stack. Card comprises options to reflect like, dislike and favorite feature. The card elements are highly customisable. This layout is quite common in social media apps like Instagram, tinder etc.
 
 
-## Technical Notes:
+# Technical Notes:
 The layout for pages is built using stack of draggable widgets using LayoutBuilder.  This package supports cards to be tapped too.
 Dev have options show 2 or 3 buttons, change the color, icon name and icon color of those buttons too.
 
 ![](https://github.com/TeaTalkInternal/github_assets/blob/master/gifs/photo_card_swiper.gif)
 
-- [photo_card_swiper](#photo_card_swiper)
-- [How to use it.](#how-to-use-it)
-- [parameters](#parameters)
-
-##  How to use it.
+#  How to use it.
 
 the usage is very simple, just use the following code for default rendering of photos. Default values for Icons and Colors are taken care for easy usage.
 
@@ -50,7 +50,7 @@ or use the following with customizations
  ),
 ```
 
-## parameters
+## Parameters for photo_card_swiper
 
 | parameter                  | description                                                                           | value                                                                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -72,8 +72,17 @@ or use the following with customizations
 | onCardTap          | Background color of Tabbar                                            | This is a optional parameter. Example pass method with completion handler. (int _index) { }                                                                                                                                                                 |
 | cardSwiped          | Background color of Tabbar                                            | This is a optional parameter. Example pass method with completion handler. (CardActionDirection _direction, int _index) { }                                                                                                                                               |
 
+## Attributes/Properties of PhotoCard
 
-Please note try to load max of 10 photos at one time. This helps stack to be neat. To show more photos load them on pagination basis using cardSwiped method. The usage is described in the example code.
+| parameter                  | description                                                                           | default                                                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title          | String to be displayed in title Text widget                                          | empty string                                                                                                                                                    |
+| description          | String to be displayed in description Text widget                                            | empty string                                                                                                                                                    |
+| imagePath          | Image path of image, either local assets folder image or http image path                                            | empty string                                                                                                                                                    |
+| isLocalImage          | Value is true if imagePath is local assets folder image, Value is true if imagePath is http image path                                             | true                                                                                                                                                    |
+Please note try to load max of 10 photos at one time. This helps stack to be neat. To show more photos load them on pagination basis using cardSwiped method. 
+
+The usage is well described in the example code.
 
 [git repo here](https://github.com/TeaTalkInternal/photo_card_swiper)
 

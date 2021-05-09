@@ -6,7 +6,6 @@ import 'package:photo_card_swiper/notifiers/feedback_photo_card_value_notifier.d
 import 'package:photo_card_swiper/models/photo_card.dart';
 import 'package:photo_card_swiper/photo_card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_card_swiper/models/photo_card.dart';
 
 class FeedbackPhotoCardWidget extends StatelessWidget {
   final PhotoCard photoCard;

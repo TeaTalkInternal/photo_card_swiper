@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class PhotoCard {
   final String title;
   final String description;
-  final String imageName;
+  final String imagePath;
+  final bool isLocalImage;
   final String cardId = UniqueKey().toString();
 
   PhotoCard({
     this.title = "",
     this.description = "",
-    this.imageName = "",
+    this.imagePath = "",
+    this.isLocalImage = true,
   });
-
-  String get imagePath => 'images/$imageName';
 }

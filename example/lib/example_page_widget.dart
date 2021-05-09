@@ -3,24 +3,63 @@ import 'package:photo_card_swiper/models/photo_card.dart';
 import 'package:photo_card_swiper/photo_card_swiper.dart';
 
 class ExamplePageWidget extends StatefulWidget {
+  //Images from local Images folder
   List<PhotoCard> _photos = [
     PhotoCard(
       title: 'Sonu Sood',
       description: 'A man with million hearts.',
-      imageName: 'pic_0.jpg',
+      imagePath: 'images/pic_0.jpg',
     ),
     PhotoCard(
       title: 'Dr APJ Abdul Kalam',
       description: 'An inspiration to many.',
-      imageName: 'pic_2.jpg',
+      imagePath: 'images/pic_2.jpg',
     ),
     PhotoCard(
       title: 'Anand Kumar',
       description: 'An mathematics pioneer.',
-      imageName: 'pic_4.jpg',
+      imagePath: 'images/pic_4.jpg',
+    ),
+    PhotoCard(
+      title: 'Dr. Shankare Gowda',
+      description: 'A skin specialist who treats patients for Rs 5.',
+      imagePath: 'images/pic_5.jpg',
     ),
   ];
 
+/*
+  //Images from Network
+  List<PhotoCard> _photos = [
+    PhotoCard(
+      title: 'Sonu Sood',
+      description: 'A man with million hearts.',
+      imagePath:
+          'https://images.indianexpress.com/2021/05/sonu-sood-1200-1.jpg',
+      isLocalImage: false,
+    ),
+    PhotoCard(
+      title: 'Dr APJ Abdul Kalam',
+      description: 'An inspiration to many.',
+      imagePath:
+          'https://www.apjabdulkalamfoundation.org/images/about/abdulkalamprofile.jpg',
+      isLocalImage: false,
+    ),
+    PhotoCard(
+      title: 'Anand Kumar',
+      description: 'An mathematics pioneer.',
+      imagePath:
+          'https://www.jagranjosh.com/imported/images/E/GK/anand-kumar.jpg',
+      isLocalImage: false,
+    ),
+    PhotoCard(
+      title: 'Dr. Shankare Gowda',
+      description: 'A skin specialist who treats patients for Rs 5.',
+      imagePath:
+          'https://new-img.patrika.com/upload/2018/04/24/five_rupees_doctor_2700143_835x547-m.jpg',
+      isLocalImage: false,
+    ),
+  ];
+*/
   @override
   _ExamplePageWidgetState createState() => _ExamplePageWidgetState();
 }
@@ -81,18 +120,36 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
   void _loadMorePhotos() {
     Future.delayed(Duration(seconds: 1), () {
       setState(() {
+        //Images from local Images folder
         widget._photos = [
           PhotoCard(
             title: 'Salumarada Thimmakka',
             description: 'A inspiring  environmentalist.',
-            imageName: 'pic_1.jpg',
+            imagePath: 'images/pic_1.jpg',
           ),
           PhotoCard(
             title: 'Kareem Bhai',
             description: 'An Unsung hero.',
-            imageName: 'pic_3.jpg',
+            imagePath: 'images/pic_3.jpg',
           ),
         ];
+/*
+        //Images from Network
+        widget._photos = [
+          PhotoCard(
+              title: 'Salumarada Thimmakka',
+              description: 'A inspiring  environmentalist.',
+              imagePath:
+                  'https://www.newskarnataka.com/storage/photos/shares/2018MAY/saalumarada_thimmakka.jpg',
+              isLocalImage: false),
+          PhotoCard(
+              title: 'Kareem Bhai',
+              description: 'An Unsung hero.',
+              imagePath:
+                  'https://www.theink24.com/wp-content/uploads/2018/06/paperboy_kareem-bhai.png',
+              isLocalImage: false),
+        ];
+        */
       });
     });
   }

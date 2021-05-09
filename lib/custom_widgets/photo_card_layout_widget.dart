@@ -89,12 +89,19 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25.0),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        widget.photoCard.imagePath,
-                      ),
-                      fit: BoxFit.cover,
-                    ),
+                    image: widget.photoCard.isLocalImage
+                        ? DecorationImage(
+                            image: AssetImage(
+                              widget.photoCard.imagePath,
+                            ),
+                            fit: BoxFit.cover,
+                          )
+                        : DecorationImage(
+                            image: NetworkImage(
+                              widget.photoCard.imagePath,
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                   ),
                   margin: const EdgeInsets.all(10.0),
                   child: Stack(
