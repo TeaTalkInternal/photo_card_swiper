@@ -67,12 +67,19 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25.0),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        photoCard.imagePath,
-                      ),
-                      fit: BoxFit.cover,
-                    ),
+                    image: photoCard.isLocalImage
+                        ? DecorationImage(
+                            image: AssetImage(
+                              photoCard.imagePath,
+                            ),
+                            fit: BoxFit.cover,
+                          )
+                        : DecorationImage(
+                            image: NetworkImage(
+                              photoCard.imagePath,
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                   ),
                   margin: const EdgeInsets.all(10.0),
                   child: ValueListenableBuilder(

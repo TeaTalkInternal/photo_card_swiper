@@ -141,13 +141,13 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
               description: 'A inspiring  environmentalist.',
               imagePath:
                   'https://www.newskarnataka.com/storage/photos/shares/2018MAY/saalumarada_thimmakka.jpg',
-              isLocalImage: false),
+              isLocalImage: false,),
           PhotoCard(
               title: 'Kareem Bhai',
               description: 'An Unsung hero.',
               imagePath:
                   'https://www.theink24.com/wp-content/uploads/2018/06/paperboy_kareem-bhai.png',
-              isLocalImage: false),
+              isLocalImage: false,),
         ];
         */
       });

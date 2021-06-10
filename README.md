@@ -80,6 +80,7 @@ or use the following with customizations
 | description          | String to be displayed in description Text widget                                            | empty string                                                                                                                                                    |
 | imagePath          | Image path of image, either local assets folder image or http image path                                            | empty string                                                                                                                                                    |
 | isLocalImage          | Value is true if imagePath is local assets folder image, Value is true if imagePath is http image path                                             | true                                                                                                                                                    |
+
 Please note try to load max of 10 photos at one time. This helps stack to be neat. To show more photos load them on pagination basis using cardSwiped method. 
 
 The usage is well described in the example code.
