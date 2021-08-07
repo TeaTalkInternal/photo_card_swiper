@@ -13,3 +13,7 @@
 ## [0.0.4] - 10 June 2021.
 
 * Fixed Network Image option for feedback card and updated README.md.
+
+## [0.0.5] - 03 July 2021.
+
+* Exposed cardId attribute for PhotoCard Model

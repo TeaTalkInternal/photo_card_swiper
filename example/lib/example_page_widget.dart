@@ -6,25 +6,25 @@ class ExamplePageWidget extends StatefulWidget {
   //Images from local Images folder
   List<PhotoCard> _photos = [
     PhotoCard(
-      title: 'Sonu Sood',
-      description: 'A man with million hearts.',
-      imagePath: 'images/pic_0.jpg',
-    ),
+        title: 'Sonu Sood',
+        description: 'A man with million hearts.',
+        imagePath: 'images/pic_0.jpg',
+        cardId: '1'),
     PhotoCard(
-      title: 'Dr APJ Abdul Kalam',
-      description: 'An inspiration to many.',
-      imagePath: 'images/pic_2.jpg',
-    ),
+        title: 'Dr APJ Abdul Kalam',
+        description: 'An inspiration to many.',
+        imagePath: 'images/pic_2.jpg',
+        cardId: '2'),
     PhotoCard(
-      title: 'Anand Kumar',
-      description: 'An mathematics pioneer.',
-      imagePath: 'images/pic_4.jpg',
-    ),
+        title: 'Anand Kumar',
+        description: 'An mathematics pioneer.',
+        imagePath: 'images/pic_4.jpg',
+        cardId: '3'),
     PhotoCard(
-      title: 'Dr. Shankare Gowda',
-      description: 'A skin specialist who treats patients for Rs 5.',
-      imagePath: 'images/pic_5.jpg',
-    ),
+        title: 'Dr. Shankare Gowda',
+        description: 'A skin specialist who treats patients for Rs 5.',
+        imagePath: 'images/pic_5.jpg',
+        cardId: '4'),
   ];
 
 /*
@@ -36,6 +36,7 @@ class ExamplePageWidget extends StatefulWidget {
       imagePath:
           'https://images.indianexpress.com/2021/05/sonu-sood-1200-1.jpg',
       isLocalImage: false,
+      cardId: '1',
     ),
     PhotoCard(
       title: 'Dr APJ Abdul Kalam',
@@ -43,6 +44,7 @@ class ExamplePageWidget extends StatefulWidget {
       imagePath:
           'https://www.apjabdulkalamfoundation.org/images/about/abdulkalamprofile.jpg',
       isLocalImage: false,
+      cardId: '2',
     ),
     PhotoCard(
       title: 'Anand Kumar',
@@ -50,6 +52,7 @@ class ExamplePageWidget extends StatefulWidget {
       imagePath:
           'https://www.jagranjosh.com/imported/images/E/GK/anand-kumar.jpg',
       isLocalImage: false,
+      cardId: '3',
     ),
     PhotoCard(
       title: 'Dr. Shankare Gowda',
@@ -57,6 +60,7 @@ class ExamplePageWidget extends StatefulWidget {
       imagePath:
           'https://new-img.patrika.com/upload/2018/04/24/five_rupees_doctor_2700143_835x547-m.jpg',
       isLocalImage: false,
+      cardId: '4',
     ),
   ];
 */
@@ -126,11 +130,13 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
             title: 'Salumarada Thimmakka',
             description: 'A inspiring  environmentalist.',
             imagePath: 'images/pic_1.jpg',
+            cardId: '5',
           ),
           PhotoCard(
             title: 'Kareem Bhai',
             description: 'An Unsung hero.',
             imagePath: 'images/pic_3.jpg',
+            cardId: '6',
           ),
         ];
 /*
@@ -177,8 +183,8 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
     print('Center button clicked');
   }
 
-  void _rightButtonClicked() {
-    print('Right button clicked');
+  void _rightButtonClicked(int index) {
+    print('Right button clicked $index');
   }
 }
 

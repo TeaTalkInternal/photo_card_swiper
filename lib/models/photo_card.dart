@@ -5,12 +5,13 @@ class PhotoCard {
   final String description;
   final String imagePath;
   final bool isLocalImage;
-  final String cardId = UniqueKey().toString();
+  final String cardId;
 
   PhotoCard({
     this.title = "",
     this.description = "",
     this.imagePath = "",
     this.isLocalImage = true,
+    required this.cardId,
   });
 }

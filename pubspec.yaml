@@ -1,6 +1,6 @@
 name: photo_card_swiper
 description: A simple flutter package for creating a swiping card layout for list of photos.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/TeaTalkInternal/photo_card_swiper
 
 environment:
