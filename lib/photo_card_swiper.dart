@@ -22,6 +22,10 @@ class PhotoCardSwiper extends StatefulWidget {
   final Function? cardSwiped;
   final bool showLoading;
   final bool hideCenterButton;
+  final bool hideTitleText;
+  final bool hideDescriptionText;
+  final BoxFit imageScaleType;
+  final Color? imageBackgroundColor;
   final IconData? leftButtonIcon;
   final IconData? centerButtonIcon;
   final IconData? rightButtonIcon;
@@ -40,7 +44,11 @@ class PhotoCardSwiper extends StatefulWidget {
     required this.photos,
     this.cardSwiped,
     this.showLoading = true,
+    this.imageScaleType = BoxFit.cover,
+    this.imageBackgroundColor = Colors.black87,
     this.hideCenterButton = false,
+    this.hideTitleText = false,
+    this.hideDescriptionText = false,
     this.leftButtonIcon,
     this.centerButtonIcon,
     this.rightButtonIcon,
@@ -175,6 +183,10 @@ class _PhotoCardSwiperState extends State<PhotoCardSwiper> {
                             rightButtonIcon: widget.rightButtonIcon,
                             centerButtonIcon: widget.centerButtonIcon,
                             hideCenterButton: widget.hideCenterButton,
+                            hideTitleText: widget.hideTitleText,
+                            hideDescriptionText: widget.hideDescriptionText,
+                            imageScaleType: widget.imageScaleType,
+                            imageBackgroundColor: widget.imageBackgroundColor,
                             feedbackPhotoCardValueNotifier:
                                 _feedbackPhotoCardValueNotifier,
                             leftButtonIconColor: widget.leftButtonIconColor,
@@ -190,7 +202,11 @@ class _PhotoCardSwiperState extends State<PhotoCardSwiper> {
                           child: PhotoCardLayoutWidget(
                             cardHeight: _updatedCardHeight,
                             cardWidth: _cardWidth,
+                            imageScaleType: widget.imageScaleType,
+                            imageBackgroundColor: widget.imageBackgroundColor,
                             hideCenterButton: widget.hideCenterButton,
+                            hideTitleText: widget.hideTitleText,
+                            hideDescriptionText: widget.hideDescriptionText,
                             photoCard: _updatedPhoto,
                             leftButtonIcon: widget.leftButtonIcon,
                             rightButtonIcon: widget.rightButtonIcon,

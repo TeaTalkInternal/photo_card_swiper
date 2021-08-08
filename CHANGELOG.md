@@ -17,3 +17,11 @@
 ## [0.0.5] - 03 July 2021.
 
 * Exposed cardId attribute for PhotoCard Model
+
+## [0.0.6] - 08 August 2021.
+
+* Added few more global attributes to customize PhotoSwiper. 
+* bool hideTitleText
+* bool hideDescriptionText
+* BoxFit imageScaleType
+* Color imageBackgroundColor

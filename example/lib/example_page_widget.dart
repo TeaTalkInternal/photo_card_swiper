@@ -93,6 +93,10 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
                     cardSwiped: _cardSwiped,
                     showLoading: true,
                     hideCenterButton: false,
+                    hideTitleText: false,
+                    hideDescriptionText: false,
+                    imageScaleType: BoxFit.cover,
+                    imageBackgroundColor: Colors.grey,
                     leftButtonIcon: Icons.close,
                     rightButtonIcon: Icons.check,
                     centerButtonIcon: Icons.favorite,
@@ -183,8 +187,8 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
     print('Center button clicked');
   }
 
-  void _rightButtonClicked(int index) {
-    print('Right button clicked $index');
+  void _rightButtonClicked() {
+    print('Right button clicked');
   }
 }
 

@@ -10,6 +10,10 @@ class PhotoCardLayoutWidget extends StatefulWidget {
   final double cardHeight;
   final double cardWidth;
   final bool hideCenterButton;
+  final bool hideTitleText;
+  final bool hideDescriptionText;
+  final BoxFit imageScaleType;
+  final Color? imageBackgroundColor;
   final bool isLeftOverlayShown;
   final bool isCenterOverlayShown;
   final bool isRightOverlayShown;
@@ -33,6 +37,10 @@ class PhotoCardLayoutWidget extends StatefulWidget {
     required this.cardHeight,
     required this.cardWidth,
     required this.hideCenterButton,
+    required this.hideTitleText,
+    required this.hideDescriptionText,
+    required this.imageScaleType,
+    required this.imageBackgroundColor,
     required this.isLeftOverlayShown,
     required this.isCenterOverlayShown,
     required this.isRightOverlayShown,
@@ -89,18 +97,19 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25.0),
+                    color: widget.imageBackgroundColor,
                     image: widget.photoCard.isLocalImage
                         ? DecorationImage(
                             image: AssetImage(
                               widget.photoCard.imagePath,
                             ),
-                            fit: BoxFit.cover,
+                            fit: widget.imageScaleType,
                           )
                         : DecorationImage(
                             image: NetworkImage(
                               widget.photoCard.imagePath,
                             ),
-                            fit: BoxFit.cover,
+                            fit: widget.imageScaleType,
                           ),
                   ),
                   margin: const EdgeInsets.all(10.0),
@@ -178,11 +187,17 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  PhotoTitleWidget(photoCard: widget.photoCard),
+                  Visibility(
+                    visible: !widget.hideTitleText,
+                    child: PhotoTitleWidget(photoCard: widget.photoCard),
+                  ),
                   SizedBox(
                     height: 5.0,
                   ),
-                  PhotoDescriptionWidget(photoCard: widget.photoCard),
+                  Visibility(
+                    visible: !widget.hideDescriptionText,
+                    child: PhotoDescriptionWidget(photoCard: widget.photoCard),
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
