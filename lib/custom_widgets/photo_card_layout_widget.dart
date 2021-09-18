@@ -20,7 +20,6 @@ class PhotoCardLayoutWidget extends StatefulWidget {
   final IconData? leftButtonIcon;
   final IconData? centerButtonIcon;
   final IconData? rightButtonIcon;
-  final double? buttonIconSize;
   final Color? leftButtonIconColor;
   final Color? leftButtonBackgroundColor;
   final Color? centerButtonIconColor;
@@ -60,7 +59,6 @@ class PhotoCardLayoutWidget extends StatefulWidget {
     this.rightButtonAction,
     this.onCardTap,
     Key? key,
-    this.buttonIconSize,
   }) : super(key: key);
 
   @override
@@ -118,7 +116,6 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                   child: Stack(
                     children: [
                       CardActionSpecifcOverlayWidget(
-                        iconSize: widget.buttonIconSize ?? 55,
                         key: UniqueKey(),
                         buttonIconColor:
                             widget.leftButtonIconColor ?? Colors.red[800],
@@ -126,7 +123,6 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                         isVisible: widget.isLeftOverlayShown,
                       ),
                       CardActionSpecifcOverlayWidget(
-                        iconSize: widget.buttonIconSize ?? 55,
                         key: UniqueKey(),
                         buttonIconColor: widget.centerButtonIconColor ??
                             Colors.lightBlue[600],
@@ -134,7 +130,6 @@ class _PhotoCardLayoutWidgetState extends State<PhotoCardLayoutWidget> {
                         isVisible: widget.isCenterOverlayShown,
                       ),
                       CardActionSpecifcOverlayWidget(
-                        iconSize: widget.buttonIconSize ?? 55,
                         key: UniqueKey(),
                         buttonIconColor: widget.rightButtonIconColor ??
                             Colors.lightGreen[700],
@@ -223,13 +218,11 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
     required this.buttonIconColor,
     required this.buttonIcon,
     required this.isVisible,
-    required this.iconSize,
   }) : super(key: key);
 
   final Color? buttonIconColor;
   final IconData buttonIcon;
   final bool isVisible;
-  final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +248,7 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
                 child: Icon(
                   buttonIcon,
                   color: buttonIconColor,
-                  size: iconSize ?? 55.0,
+                  size: 55.0,
                 ),
               ),
             ),
@@ -295,13 +288,14 @@ class CenterButtonWidget extends StatelessWidget {
         child: InkWell(
           splashColor: Colors.white,
           child: SizedBox(
-              width: 85,
-              height: 85,
-              child: Icon(
-                centerButtonIcon ?? Icons.favorite,
-                color: centerButtonIconColor ?? Colors.lightBlue[600],
-                size: 50,
-              )),
+            width: 85,
+            height: 85,
+            child: Icon(
+              centerButtonIcon ?? Icons.favorite,
+              color: centerButtonIconColor ?? Colors.lightBlue[600],
+              size: 55,
+            ),
+          ),
           onTap: () {
             if (centerButtonAction != null) {
               centerButtonAction!();
@@ -347,7 +341,7 @@ class RightButtonWidget extends StatelessWidget {
               child: Icon(
                 rightButtonIcon ?? Icons.check,
                 color: rightButtonIconColor ?? Colors.lightGreen[700],
-                size: 50,
+                size: 35,
               )),
           onTap: () {
             if (rightButtonAction != null) {

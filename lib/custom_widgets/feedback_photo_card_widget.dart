@@ -18,7 +18,6 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
   final Color? imageBackgroundColor;
   final FeedbackPhotoCardValueNotifier feedbackPhotoCardValueNotifier;
   final IconData? leftButtonIcon;
-  final double? buttonIconSize;
   final IconData? centerButtonIcon;
   final IconData? rightButtonIcon;
   final Color? leftButtonIconColor;
@@ -48,7 +47,6 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
     this.rightButtonIconColor,
     this.rightButtonBackgroundColor,
     Key? key,
-    this.buttonIconSize = 55,
   }) : super(key: key);
 
   @override
@@ -109,7 +107,6 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                         case CardActionDirection.cardCenterAction:
                           return CardActionSpecifcOverlayWidget(
                             key: UniqueKey(),
-                            iconSize: buttonIconSize ?? 55,
                             buttonIconColor:
                                 centerButtonIconColor ?? Colors.lightBlue[600],
                             buttonIcon: centerButtonIcon ?? Icons.favorite,
@@ -122,7 +119,6 @@ class FeedbackPhotoCardWidget extends StatelessWidget {
                                 rightButtonIconColor ?? Colors.lightGreen[700],
                             buttonIcon: rightButtonIcon ?? Icons.check,
                             isVisible: true,
-                            iconSize: buttonIconSize ?? 55,
                           );
                         default:
                           return Container();
@@ -203,13 +199,11 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
     required this.buttonIconColor,
     required this.buttonIcon,
     required this.isVisible,
-    this.iconSize = 55,
   }) : super(key: key);
 
   final Color? buttonIconColor;
   final IconData buttonIcon;
   final bool isVisible;
-  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -235,7 +229,7 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
                 child: Icon(
                   buttonIcon,
                   color: buttonIconColor ?? Colors.red[800],
-                  size: iconSize,
+                  size: 55,
                 ),
               ),
             ),

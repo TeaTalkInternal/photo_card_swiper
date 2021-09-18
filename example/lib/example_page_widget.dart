@@ -98,7 +98,7 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
                     imageScaleType: BoxFit.cover,
                     imageBackgroundColor: Colors.grey,
                     leftButtonIcon: Icons.close,
-                    rightButtonIcon: Icons.check,
+                    rightButtonIcon: Icons.shopping_cart,
                     centerButtonIcon: Icons.favorite,
                     leftButtonBackgroundColor: Colors.red[100],
                     leftButtonIconColor: Colors.red[600],
