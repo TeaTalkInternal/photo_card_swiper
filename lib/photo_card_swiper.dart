@@ -264,7 +264,7 @@ class _PhotoCardSwiperState extends State<PhotoCardSwiper> {
                                 _likeCard(forIndex: _index);
                                 _hideAllPhotoCardOverlayWidgets();
                                 if (widget.rightButtonAction != null) {
-                                  widget.rightButtonAction!(_index);
+                                  widget.rightButtonAction!();
                                 }
                               });
                             },
