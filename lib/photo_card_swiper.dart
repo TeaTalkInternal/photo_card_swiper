@@ -29,6 +29,7 @@ class PhotoCardSwiper extends StatefulWidget {
   final IconData? leftButtonIcon;
   final IconData? centerButtonIcon;
   final IconData? rightButtonIcon;
+  final double? buttonIconSize;
   final Color? leftButtonIconColor;
   final Color? leftButtonBackgroundColor;
   final Color? centerButtonIconColor;
@@ -62,6 +63,7 @@ class PhotoCardSwiper extends StatefulWidget {
     this.centerButtonAction,
     this.rightButtonAction,
     this.onCardTap,
+    this.buttonIconSize,
   });
   @override
   _PhotoCardSwiperState createState() => _PhotoCardSwiperState();
