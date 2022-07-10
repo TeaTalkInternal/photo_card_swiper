@@ -288,13 +288,14 @@ class CenterButtonWidget extends StatelessWidget {
         child: InkWell(
           splashColor: Colors.white,
           child: SizedBox(
-              width: 85,
-              height: 85,
-              child: Icon(
-                centerButtonIcon ?? Icons.favorite,
-                color: centerButtonIconColor ?? Colors.lightBlue[600],
-                size: 50,
-              )),
+            width: 85,
+            height: 85,
+            child: Icon(
+              centerButtonIcon ?? Icons.favorite,
+              color: centerButtonIconColor ?? Colors.lightBlue[600],
+              size: 55,
+            ),
+          ),
           onTap: () {
             if (centerButtonAction != null) {
               centerButtonAction!();
@@ -340,7 +341,7 @@ class RightButtonWidget extends StatelessWidget {
               child: Icon(
                 rightButtonIcon ?? Icons.check,
                 color: rightButtonIconColor ?? Colors.lightGreen[700],
-                size: 50,
+                size: 35,
               )),
           onTap: () {
             if (rightButtonAction != null) {

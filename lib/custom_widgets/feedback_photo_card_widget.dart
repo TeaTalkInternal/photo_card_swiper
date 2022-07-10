@@ -229,7 +229,7 @@ class CardActionSpecifcOverlayWidget extends StatelessWidget {
                 child: Icon(
                   buttonIcon,
                   color: buttonIconColor ?? Colors.red[800],
-                  size: 55.0,
+                  size: 55,
                 ),
               ),
             ),
