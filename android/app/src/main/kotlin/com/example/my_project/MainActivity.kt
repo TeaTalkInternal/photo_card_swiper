@@ -1,6 +1,0 @@
-package com.mycompany.photocardswiper
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity: FlutterActivity() {
-}
